@@ -34,17 +34,8 @@
     padding: 10px;
 }
 
-/* 
-.innerDiv form input:valid {
-    background-color: blue;
-}
-
-.innerDiv form input:invalid {
-    background-color: orange;
-} */
-
 .innerDiv form label {
-    color: #006400;
+    color: rgb(50, 86, 37);
     font-weight: 500;
     margin-left: 0;
     font-size: 16px;
@@ -62,7 +53,7 @@
 }
 
 .innerDiv form button {
-    background-color: rgba(0, 128, 0, 1);
+    background-color: rgb(50, 86, 37);
     /* fully opaque green */
     color: white;
     border: 0;
