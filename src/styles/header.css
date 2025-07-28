@@ -1,8 +1,8 @@
-h1 {
+h2 {
     text-align: center;
     position: sticky;
     top: 0;
-    color: green;
+    color: rgb(50, 86, 37);
     background-color: #caa486;
     margin: 0px;
     padding-top: 17px;

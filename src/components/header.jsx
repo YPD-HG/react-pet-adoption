@@ -2,6 +2,6 @@ import "../styles/header.css"
 
 export default function Header() {
     return <>
-        <h1>Pet Adoption Form</h1>
+        <h2>Pet Adoption Form</h2>
     </>
 }

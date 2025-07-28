@@ -88,8 +88,10 @@ export default function Form({ handleFormSubmit }) {
             };
             handleFormSubmit(formData);
             navigate('/table'); // ✅ This should come after submission
+
         }
     }
+
 
     return <div className="parentDiv">
         <div className="formDiv">

@@ -28,7 +28,6 @@ function TableContent({ pets }) {
                             <td>{pet.yourName}</td>
                             <td>{pet.email}</td>
                             <td>{pet.phone}</td>
-
                         </tr>
                     ))}
                 </tbody>
@@ -38,20 +37,21 @@ function TableContent({ pets }) {
 }
 
 export default function Table({ pets }) {
-    // console.log("pets in table.jsx Table : ", pets);
-
     let navigate = useNavigate();
 
     function goBack() {
         navigate('/')
     }
 
-    console.log("is pets reaching here? : ", pets);
-
-
-    return <>
+    return <div style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+    }}>
         <TableContent pets={pets} />
-        <h2 style={{ color: "blue" }}>Table</h2>
-        <button onClick={goBack}>Go Back</button>
-    </>
+        <button style={{
+            marginTop: "40px"
+        }} onClick={goBack}>Go Back</button>
+    </div>
 }
