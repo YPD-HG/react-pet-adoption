@@ -38,8 +38,8 @@ export default function Form({ handleFormSubmit }) {
         setPhone(event.target.value)
     }
 
-    function containsOnlyNumbersRegex(inputString) {
-        return /^\d+$/.test(inputString);
+    function isExactly10Digits(inputString) {
+        return /^\d{10}$/.test(inputString);
     }
 
     const validateForm = () => {
@@ -61,11 +61,13 @@ export default function Form({ handleFormSubmit }) {
             newErrors.yourName = "Your name must be atleast 3 characters long!"
         }
 
-        if (!email.includes('@')) {
-            newErrors.email = "Invalid email format"
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        if (!emailRegex.test(email)) {
+            newErrors.email = "Invalid email format";
         }
 
-        if (phone.length < 10 && !containsOnlyNumbersRegex(phone)) {
+        if (!isExactly10Digits(phone)) {
             newErrors.phone = "Please enter a valid 10 digit phone number"
         }
 
@@ -73,6 +75,7 @@ export default function Form({ handleFormSubmit }) {
     }
 
     const handleSubmit = (e) => {
+        console.log("submit handled");
         e.preventDefault();
         const errorInForm = validateForm();
         setErrors(errorInForm);
@@ -88,7 +91,6 @@ export default function Form({ handleFormSubmit }) {
             };
             handleFormSubmit(formData);
             navigate('/table'); // ✅ This should come after submission
-
         }
     }
 
@@ -96,9 +98,13 @@ export default function Form({ handleFormSubmit }) {
     return <div className="parentDiv">
         <div className="formDiv">
             <div className="innerDiv">
-                <form onSubmit={handleSubmit} action="">
+                <form
+                    onSubmit={handleSubmit}
+                    action=""
+                    noValidate>
                     <label htmlFor="">Pet Name</label><br />
                     <input
+                        style={{ marginTop: "9px" }}
                         type="text"
                         placeholder="Pet Name"
                         value={petName}
@@ -158,7 +164,7 @@ export default function Form({ handleFormSubmit }) {
                         onChange={handlePhoneChange}
                         minLength="10" required
                     /><br />
-                    <div style={{ height: '15px' }} className="content">
+                    <div style={{ height: '15px', marginTop: "12px" }} className="content">
                         <span></span>
                         {errors.phone && <p className="error">{errors.phone}</p>}
                     </div>

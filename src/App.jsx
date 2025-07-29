@@ -12,8 +12,6 @@ export default function App() {
     setPets(prev => [...prev, formData]);
   }
 
-  console.log("Pet Info : ", pets);
-
   return <>
     <BrowserRouter>
       <Routes>
@@ -35,7 +33,6 @@ function LayoutForm({ handleFormSubmit }) {
 }
 
 function LayoutTable({ pets }) {
-  console.log("pets inside App.jsx LayoutTable : ", pets);
   return <div>
     <Header />
     <div style={{ height: "80vh" }}>

@@ -2,10 +2,6 @@ import { useNavigate } from "react-router-dom"
 import "../styles/table.css"
 
 function TableContent({ pets }) {
-    console.log("I am in TableContent now!!");
-
-    console.log("pets inside table.jsx TableContent() : ", pets);
-
     return (
         <div className="table-container">
             <table className="table">
