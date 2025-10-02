@@ -1,6 +1,8 @@
 body{
     margin: 0px;
     font-family: 'Inter';
-    background-image: url('../images/VIER\ PFOTEN_2016-09-18_081-2000x666-1920x639.jpg');
+    background-image: url('/react-pet-adoption/images/bg.jpg');
+    /* background-image: url('../../public/images/VIER\ PFOTEN_2016-09-18_081-2000x666-1920x639.jpg'); */
+    /* background-image: url('../images/VIER\ PFOTEN_2016-09-18_081-2000x666-1920x639.jpg'); */
 }
 
