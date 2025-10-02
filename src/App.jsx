@@ -13,7 +13,7 @@ export default function App() {
   }
 
   return <>
-    <BrowserRouter>
+    <BrowserRouter basename="/react-pet-adoption">
       <Routes>
         <Route path='/' element={<LayoutForm handleFormSubmit={handleFormSubmit} />} />
         <Route path="/table" element={<LayoutTable pets={pets} />} />
