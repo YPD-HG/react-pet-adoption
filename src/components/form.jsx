@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import "../styles/form.css"
 
 export default function Form({ handleFormSubmit }) {
+    const [data, setData] = useState('')
     const navigate = useNavigate();
     const tableButtonRef = useRef();
     const [petName, setPetName] = useState('')
@@ -75,9 +76,10 @@ export default function Form({ handleFormSubmit }) {
     }
 
     const handleSubmit = (e) => {
-        console.log("submit handled");
         e.preventDefault();
+
         const errorInForm = validateForm();
+
         setErrors(errorInForm);
 
         if (Object.keys(errorInForm).length === 0) {
@@ -89,11 +91,12 @@ export default function Form({ handleFormSubmit }) {
                 email,
                 phone
             };
+            const dataTransfer = Object.assign(formData, data);
+            console.log("dataTransfer : ", dataTransfer);
             handleFormSubmit(formData);
-            navigate('/table'); // ✅ This should come after submission
+            navigate('/table');
         }
     }
-
 
     return <div className="parentDiv">
         <div className="formDiv">

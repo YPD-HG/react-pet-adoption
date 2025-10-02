@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* vertical */
     background-size: cover;
 }
 
@@ -11,18 +10,15 @@
     place-items: center;
     margin-top: 25px;
     background-color: rgba(202, 164, 134, 0.85);
-    /* ✅ Transparent background only */
     width: 500px;
     height: 600px;
     backdrop-filter: blur(6px);
-    /* smooth out background behind form */
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
 }
 
 .innerDiv {
-    /* background-color: aqua; */
     width: 450px;
     height: 500px;
 }
@@ -55,7 +51,6 @@
 
 .innerDiv form button {
     background-color: rgb(50, 86, 37);
-    /* fully opaque green */
     color: white;
     border: 0;
     margin-top: 15px;
